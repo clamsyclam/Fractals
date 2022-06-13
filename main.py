@@ -28,7 +28,8 @@ for row_index, Re in enumerate(tqdm(numpy.linspace(-2, 1, num=rows))):
         result[row_index, column_index] = mandelbrot(Re, Im, 100)
 
 plt.figure(dpi=100)
-plt.imshow(result.T, cmap='hot', interpolation='bilinear', extent=[-2, 1, -1, 1])
+cmapin = input("Color map: ")
+plt.imshow(result.T, cmap=cmapin, interpolation='bilinear', extent=[-2, 1, -1, 1])
 plt.xlabel('Re')
 plt.ylabel('Im')
 print('show :D')
